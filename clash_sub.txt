@@ -1,0 +1,9 @@
+付费
+https://apiv1.v27qae.com/flydsubal/0m3vswikoqriaryg?clash=1&extend=1
+https://dy.smjc.top/api/v1/client/subscribe?token=5f5ceafa58aa3b581676dad035ded1e3
+https://qiang0201.xn--xhq8sm16c5ls.com/api/v1/client/subscribe?token=c8ebba4b875ae229f7668c5a17c3627c
+dhh 好像是动态 token 应该也不是，上面是暂时没转换过的。有空用一下官方的导入得到clash
+
+
+公益免费
+https://raw.githubusercontent.com/ts-sf/fly/main/clash
