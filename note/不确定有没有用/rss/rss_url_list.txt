@@ -1,0 +1,2 @@
+https://blog.misaka.rest/atom.xml
+https://lov2.netlify.app/atom.xml

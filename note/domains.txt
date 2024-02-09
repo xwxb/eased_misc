@@ -1,0 +1,4 @@
+boruto.dns.army https://dynv6.com/zones/3974767
+akane.cloudns.ch https://www.cloudns.net/records/domain/6574470/
+xbleach.eu.org https://nic.eu.org/arf/en/ 待申请成功的一个IDN，私人信息应该更认真填一点的，要是没成功的话
+nijika.ddns.net https://my.noip.com/
