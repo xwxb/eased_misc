@@ -14,3 +14,7 @@ https://play.vuejs.org
 http://localhost
 https://github.dev
 https://dash.cloudflare.com
+https://leetcode.cn
+https://www.nowcoder.com
+https://tour.go-zh.org
+https://goplay.tools
