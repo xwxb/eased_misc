@@ -5,6 +5,8 @@
 // @description  快速查看去除1分10分评分后的分数
 // @author       xban
 // @match        https://bgm.tv/subject/*
+// @match        https://bangumi.tv/subject/*
+// @match        https://chii.in/subject/*
 // @grant        GM_xmlhttpRequest
 // @license MIT
 // ==/UserScript==

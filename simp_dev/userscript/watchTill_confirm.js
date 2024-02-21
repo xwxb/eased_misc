@@ -5,6 +5,7 @@
 // @description  25集以上的剧集看过操作二次确认，防止误操作
 // @match        https://bgm.tv/subject/*
 // @match        https://bangumi.tv/subject/*
+// @match        https://chii.in/subject/*
 // @grant        none
 // ==/UserScript==
 
