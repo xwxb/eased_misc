@@ -39,8 +39,8 @@
                 alert('Code copied to clipboard!');
             });
 
-            // Add the button to the code block
-            codeBlock.parentNode.appendChild(button);
+            // Add the button after the code block
+            codeBlock.parentNode.insertBefore(button, codeBlock.nextSibling);
         })();
     }
 })();
