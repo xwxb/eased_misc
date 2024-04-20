@@ -1,7 +1,7 @@
 // ==UserScript==
-// @name         班固米帖帖投票组件
+// @name         班固米贴贴投票组件
 // @version      0.1
-// @description  可视化地进行帖帖投票
+// @description  可视化地进行贴贴投票
 // @match        https://bgm.tv/group/topic/*
 // @match        https://bamgumi.tv/group/topic/*
 // @match        https://chii.in/group/topic/*
@@ -139,6 +139,7 @@ function createVotingComponent(title, votingData) {
 // --- note ---
 
 // 想法来源于 https://bgm.tv/group/topic/356278
+// 用例见 https://bgm.tv/group/topic/397128
 
 // 有帖帖之后，这个想法有了新的实现
 
@@ -178,6 +179,7 @@ function createVotingComponent(title, votingData) {
 // ---
 
 // 未来计划：
+// - [ ] 调整样式（样式是真没什么能力去调，只能ai无脑调，缺失一些技巧
 // - [ ] 只识别楼主的userid发布的内容
 // - [ ] 来一个快速格式化发布的功能，就是同时发布投票主题和选项回复
 // - [ ] 考虑楼中楼的选项影响情况如何防止
