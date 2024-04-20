@@ -45,50 +45,95 @@
     console.log(title, options)
 
     // 先在主楼提供一个可视化投票的组件和投票按钮
-    // Create the voting component
-    const votingComponent = $('<div>').addClass('voting-component');
 
-    // Create the title element
-    const titleElement = $('<h2>').text(title).addClass('voting-title');
-    votingComponent.append(titleElement);
-
-    // Create the options list
-    const optionsList = $('<ul>').addClass('voting-options');
-    options.forEach(option => {
-        const optionItem = $('<li>').addClass('voting-option');
-        const optionText = $('<span>').text(option[0]).addClass('option-text');
-        const voteCount = option[1];
-        const voteBarLen = voteCount * 3;
-        const voteBarContainer = $('<div>').addClass('vote-bar-container');
-        const voteBar = $('<div>').addClass('vote-bar').css('width', `${voteBarLen}px`);
-        const voteCountText = $('<span>').text(voteCount).addClass('vote-count');
-        voteBarContainer.append(voteBar);
-        optionItem.append(optionText, voteBarContainer, voteCountText);
-        optionsList.append(optionItem);
-    });
-    votingComponent.append(optionsList);
-
+    const votingComponent = createVotingComponent(title, options);
     // Append the voting component to the .postTopic div
     $('.postTopic').append(votingComponent);
-
-    // Add styling to create a bar chart effect
-    $('.vote-bar').css({
-        'background-color': 'blue',
-        'height': '10px',
-        'margin-top': '5px',
-        'transition': 'width 0.5s ease-in-out'
-    });
-
-    // Add styling to the vote count text
-    $('.vote-count').css({
-        'margin-left': '5px'
-    });
 
     // 最后再移除 {vote} 楼层
 
 })();
 
+function createVotingComponent(title, votingData) {
+    const maxVotes = Math.max(...votingData.map(option => option[1]));
 
+    let html = `
+      <style>
+        .voting-container {
+          display: flex;
+          flex-direction: column;
+          align-items: flex-start;
+          width: 100%;
+          max-width: 600px;
+          margin: 0 auto;
+          font-family: Arial, sans-serif;
+          color: #555;
+        }
+  
+        .voting-title {
+          font-size: 20px;
+          font-weight: bold;
+          margin-bottom: 10px;
+        }
+  
+        .voting-bar {
+          display: flex;
+          align-items: center;
+          width: 100%;
+          margin-bottom: 8px;
+        }
+  
+        .bar {
+          position: relative;
+          height: 30px;
+          background-color: #e0e0e0;
+          border-radius: 15px;
+          overflow: hidden;
+          width: 70%;
+        }
+  
+        .bar-fill {
+          height: 100%;
+          background-color: #9ccc65;
+          border-radius: 15px;
+          transition: width 0.3s ease;
+        }
+  
+        .option-text {
+          margin-left: 10px;
+          font-size: 14px;
+          color: #333;
+        }
+  
+        .vote-count {
+          margin-left: 10px;
+          font-size: 14px;
+          font-weight: bold;
+        }
+      </style>
+      <div class="voting-container">
+        <div class="voting-title">${title}</div>
+    `;
+
+    votingData.forEach(option => {
+        const [optionText, voteCount] = option;
+        const barWidth = (voteCount / maxVotes) * 100;
+
+        html += `
+        <div class="voting-bar">
+          <div class="bar">
+            <div class="bar-fill" style="width: ${barWidth}%"></div>
+          </div>
+          <span class="option-text">${optionText}</span>
+          <span class="vote-count">${voteCount} votes</span>
+        </div>
+      `;
+    });
+
+    html += '</div>';
+
+    return html;
+}
 
 
 // --- note ---
