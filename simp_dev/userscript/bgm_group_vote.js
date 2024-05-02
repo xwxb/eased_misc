@@ -11,7 +11,7 @@
 (function () {
     'use strict';
 
-    const replyList = $('#comment_list div');
+    const replyList = $('#comment_list>div');
     let title = '';
     let options = [];
     replyList.slice(0, 3).each(function () {
@@ -31,8 +31,8 @@
                     const option = subContent.replace('{opt}', '').trim();
 
                     // 统计帖帖： 1. 只统计 +1 类型帖帖的数量，应该是选择 data-like-value=140就行
-                    const plusOneReactionCntString = $(this).find('.item').filter('.selected').filter('[data-like-value="140"]').find('.num');
-                    const cnt = plusOneReactionCntString.text() || '0';
+                    const plusOneReactionCntEle = $(this).find('.item').filter('[data-like-value="140"]').find('.num');
+                    const cnt = plusOneReactionCntEle.text() || '0';
                     const optionPair = [option, parseInt(cnt)];
                     options.push(optionPair);
                 }
@@ -183,3 +183,4 @@ function createVotingComponent(title, votingData) {
 // - [ ] 只识别楼主的userid发布的内容
 // - [ ] 来一个快速格式化发布的功能，就是同时发布投票主题和选项回复
 // - [ ] 考虑楼中楼的选项影响情况如何防止
+// - [ ] 首楼投票展示投票人头像
